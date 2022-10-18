@@ -1,3 +1,4 @@
+using etickets.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +24,8 @@ namespace etickets
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add DB Context Configuration translater between Model and Database () mean passes any perameters to data storage
+            services.AddDbContext<AppDbContex>();
             services.AddControllersWithViews();
         }
 
